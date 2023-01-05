@@ -1,3 +1,5 @@
+using DataAccessLevel.Interfaces;
+using DataAccessLevel.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,7 +18,11 @@ namespace TaskPlanner
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestApi", Version = "v1" });
             });
-            
+
+            services.AddSingleton<ITaskRepository, TaskRepository>();
+            services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
+            services.AddSingleton<IWorkProcessRepository, WorkProcessRepository>();
+
             services.AddMvc();
             services.AddCors();
             services.AddControllers();

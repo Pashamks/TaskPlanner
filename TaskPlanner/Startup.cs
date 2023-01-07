@@ -1,3 +1,7 @@
+using AutoMapper;
+using BusinessLogicLevel.Interfaces;
+using BusinessLogicLevel.Managers;
+using BusinessLogicLevel.Mapper;
 using DataAccessLevel.Interfaces;
 using DataAccessLevel.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -22,6 +26,12 @@ namespace TaskPlanner
             services.AddSingleton<ITaskRepository, TaskRepository>();
             services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
             services.AddSingleton<IWorkProcessRepository, WorkProcessRepository>();
+            services.AddSingleton<IMapper>(new Mapper(new MapperConfiguration(mc =>
+            {
+                mc.AddProfile<MappingProfile>();
+            })));
+            services.AddSingleton<ITaskManager, TaskManager>();
+            services.AddSingleton<IEmployeeManager, EmployeeManager>();
 
             services.AddMvc();
             services.AddCors();

@@ -112,7 +112,11 @@ namespace PresentationLevel
                     name = Console.ReadLine();
                     Console.WriteLine("Enter product free hours:");
                     freeHours = Convert.ToInt32(Console.ReadLine());
-                    
+                    employeeManager.AddEmployee(new EmployeeModel
+                    {
+                        Name = name,
+                        FreeHours = freeHours
+                    });
                     
                 }
             }

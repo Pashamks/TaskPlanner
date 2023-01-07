@@ -4,9 +4,9 @@ namespace DataAccessLevel.Interfaces
 {
     public interface ITaskRepository
     {
-        Task<List<TaskModel>> GetAllAsync();
-        Task AddAsync(TaskModel task);
-        Task UpdateAsync(TaskModel task);
-        Task DeleteAsync(TaskModel task);
+        Task<List<TaskEntity>> GetAllAsync();
+        Task AddAsync(TaskEntity task);
+        Task UpdateAsync(TaskEntity task);
+        Task DeleteAsync(TaskEntity task);
     }
 }

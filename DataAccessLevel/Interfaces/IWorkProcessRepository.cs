@@ -5,9 +5,9 @@ namespace DataAccessLevel.Interfaces
 {
     public interface IWorkProcessRepository
     {
-        Task<List<WorkProcessModel>> GetAllAsync();
-        Task AddAsync(WorkProcessModel work);
-        Task UpdateAsync(WorkProcessModel work);
-        Task DeleteAsync(WorkProcessModel work);
+        Task<List<WorkProcessEntity>> GetAllAsync();
+        Task AddAsync(WorkProcessEntity work);
+        Task UpdateAsync(WorkProcessEntity work);
+        Task DeleteAsync(WorkProcessEntity work);
     }
 }

@@ -13,9 +13,9 @@ namespace DataAccessLevel
         {
         }
 
-        public DbSet<TaskModel> Tasks { get; set; }
-        public DbSet<EmployeeModel> Employees { get; set; }
-        public DbSet<WorkProcessModel> WorkProcess { get; set; }
+        public DbSet<TaskEntity> Tasks { get; set; }
+        public DbSet<EmployeeEntity> Employees { get; set; }
+        public DbSet<WorkProcessEntity> WorkProcess { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {

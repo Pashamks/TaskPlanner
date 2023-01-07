@@ -4,9 +4,9 @@ namespace DataAccessLevel.Interfaces
 {
     public interface IEmployeeRepository
     {
-        Task<List<EmployeeModel>> GetAllAsync();
-        Task AddAsync(EmployeeModel employee);
-        Task UpdateAsync(EmployeeModel employee);
-        Task DeleteAsync(EmployeeModel employee);
+        Task<List<EmployeeEntity>> GetAllAsync();
+        Task AddAsync(EmployeeEntity employee);
+        Task UpdateAsync(EmployeeEntity employee);
+        Task DeleteAsync(EmployeeEntity employee);
     }
 }

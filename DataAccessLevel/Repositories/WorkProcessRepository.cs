@@ -9,7 +9,7 @@ namespace DataAccessLevel.Repositories
         {
             return new EfCoreDbContext();
         }
-        public async Task AddAsync(WorkProcessModel work)
+        public async Task AddAsync(WorkProcessEntity work)
         {
             using (var context = GetContext())
             {
@@ -18,7 +18,7 @@ namespace DataAccessLevel.Repositories
             }
         }
 
-        public async Task DeleteAsync(WorkProcessModel work)
+        public async Task DeleteAsync(WorkProcessEntity work)
         {
             using (var context = GetContext())
             {
@@ -27,7 +27,7 @@ namespace DataAccessLevel.Repositories
             }
         }
 
-        public async Task<List<WorkProcessModel>> GetAllAsync()
+        public async Task<List<WorkProcessEntity>> GetAllAsync()
         {
             using (var context = GetContext())
             {
@@ -35,14 +35,14 @@ namespace DataAccessLevel.Repositories
             }
         }
 
-        public async Task UpdateAsync(WorkProcessModel work)
+        public async Task UpdateAsync(WorkProcessEntity work)
         {
             using (var context = GetContext())
             {
                 var workOld = context.WorkProcess.First(x => x.Id == work.Id);
                 workOld.Status = work.Status;
-                workOld.TaskId = work.TaskId;
-                workOld.EmployeeId = work.EmployeeId;
+                //workOld.TaskId = work.TaskId;
+                //workOld.EmployeeId = work.EmployeeId;
                 await context.SaveChangesAsync();
             }
         }

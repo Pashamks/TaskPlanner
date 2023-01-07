@@ -3,7 +3,7 @@ using DataAccessLevel.Enums;
 
 namespace DataAccessLevel.Models
 {
-    public class TaskModel
+    public class TaskEntity
     {
         public int Id { get; set; } 
         public string Title { get; set; }

@@ -9,7 +9,7 @@ namespace DataAccessLevel.Repositories
         {
             return new EfCoreDbContext();
         }
-        public async Task AddAsync(EmployeeModel employee)
+        public async Task AddAsync(EmployeeEntity employee)
         {
             using (var context = GetContext())
             {
@@ -18,7 +18,7 @@ namespace DataAccessLevel.Repositories
             }
         }
 
-        public async Task DeleteAsync(EmployeeModel employee)
+        public async Task DeleteAsync(EmployeeEntity employee)
         {
             using (var context = GetContext())
             {
@@ -27,7 +27,7 @@ namespace DataAccessLevel.Repositories
             }
         }
 
-        public async Task<List<EmployeeModel>> GetAllAsync()
+        public async Task<List<EmployeeEntity>> GetAllAsync()
         {
             using (var context = GetContext())
             {
@@ -35,7 +35,7 @@ namespace DataAccessLevel.Repositories
             }
         }
 
-        public async Task UpdateAsync(EmployeeModel employee)
+        public async Task UpdateAsync(EmployeeEntity employee)
         {
             using (var context = GetContext())
             {

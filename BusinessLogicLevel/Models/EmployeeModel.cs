@@ -1,5 +1,5 @@
 ﻿
-namespace DataAccessLevel.Models
+namespace BusinessLogicLevel.Models
 {
     public class EmployeeModel
     {

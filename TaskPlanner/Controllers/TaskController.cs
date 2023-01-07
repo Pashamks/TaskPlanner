@@ -12,17 +12,20 @@ namespace TaskPlanner.Controllers
         {
             _taskManager = taskManager;
         }
+        [Route("all")]
         [HttpGet]
         public async Task<IActionResult> GetTasks()
         {
             return Ok(await _taskManager.GetAllTasks());
         }
+        [Route("add")]
         [HttpPost]
         public async Task<IActionResult> AddTask(TaskModel task)
         {
             await _taskManager.AddNewTask(task);
             return Ok();
         }
+        [Route("close")]
         [HttpPut]
         public async Task<IActionResult> CloseTask(WorkProcessModel task)
         {

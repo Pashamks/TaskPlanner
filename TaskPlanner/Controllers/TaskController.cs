@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace TaskPlanner.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class TaskController : ControllerBase
     {
         private readonly ITaskManager _taskManager;
@@ -20,7 +22,7 @@ namespace TaskPlanner.Controllers
         }
         [Route("add")]
         [HttpPost]
-        public async Task<IActionResult> AddTask(TaskModel task)
+        public async Task<IActionResult> AddTask([FromBody]TaskModel task)
         {
             await _taskManager.AddNewTask(task);
             return Ok();
@@ -34,7 +36,7 @@ namespace TaskPlanner.Controllers
         }
         [HttpPost]
         [Route("sign")]
-        public async Task<IActionResult> SignTask(WorkProcessModel task)
+        public async Task<IActionResult> SignTask([FromBody] WorkProcessModel task)
         {
             await _taskManager.SignTaskToEmployee(task);
             return Ok();

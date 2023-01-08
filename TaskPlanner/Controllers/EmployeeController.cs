@@ -21,7 +21,7 @@ namespace TaskPlanner.Controllers
             return Ok(await _employeeManager.GetEmployees());
         }
         [HttpPost]
-        public async Task<IActionResult> AddTask(EmployeeModel employee)
+        public async Task<IActionResult> AddTask([FromBody]EmployeeModel employee)
         {
             await _employeeManager.AddEmployee(employee);
             return Ok();
